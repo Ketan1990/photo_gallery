@@ -27,7 +27,7 @@ class DBConnection {
     private function __construct() {
 
         include_once("D:\\wamp\\www\\photo_gallery\\config\\DBConfig.php");
-        $this->_connection = new \mysqli(DB_SERVER,DB_USER,DB_PASS,DB_NAME);
+        $this->_connection = new \mysqli(\DBConfig::DB_SERVER,\DBConfig::DB_USER,\DBConfig::DB_PASS,\DBConfig::DB_NAME);
 
         // Error handling
         if(mysqli_connect_error()) {
