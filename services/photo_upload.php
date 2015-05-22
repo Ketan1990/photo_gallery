@@ -1,7 +1,7 @@
 <?php
-include_once"D:\\wamp\\www\\photo_gallery\\models\\Interactor\\db\\MySqlQueryEngine.php";
-include_once"D:\\wamp\\www\\photo_gallery\\models\\Interactor\\PhotoGraphDAO.php";
-include_once"D:\\wamp\\www\\photo_gallery\\models\\entity\\Photograph.php";
+include_once"../models/Interactor/db/MySqlQueryEngine.php";
+include_once"../models/Interactor/PhotoGraphDAO.php";
+include_once"../models/entity/Photograph.php";
 include_once "../models/utility/CommanFunction.php";
 include_once "../services/Session.php";
 /*if (!$session->is_logged_in()) {     redirect_to("http://localhost/photo_gallery/AdminIdex.html");
