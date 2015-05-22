@@ -11,10 +11,8 @@ include_once("../models/utility/CommanFunction.php");
  * Time: 3:46 PM
  */
 header("Access-Control-Allow-Origin: *");
-if($session->is_logged_in()) {
-}
-$postdata = file_get_contents("php://input");
-$request = json_decode($postdata);
+$postData = file_get_contents("php://input");
+$request = json_decode($postData);
 $name = $request->user;
 $pass = $request->pass;
 $user=new \Interactor\UsersDAO(new \Interactor\MySqlQueryEngine());
@@ -25,4 +23,4 @@ if (isset($found_user->id)) {
 
 } else {
     header("HTTP/1.0 204 Not content");
-       }
+}
