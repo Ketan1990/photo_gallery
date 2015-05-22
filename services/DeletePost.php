@@ -29,7 +29,7 @@ $comment->body=$CommentDetails[0]->body;
 $comment->created=$CommentDetails[0]->created;
 
 if($CommentDAO->remove($comment)) {
-    echo"deeted";
+    echo"Deleted";
 } else {
     header("HTTP/1.0 204 Not content");
 }
