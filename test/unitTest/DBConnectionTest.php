@@ -5,7 +5,7 @@
  * Date: 5/19/2015
  * Time: 10:35 AM
  */
-include_once("../models/Interactor/db/DBConnection.php");
+include_once("../../models/Interactor/db/DBConnection.php");
 
 class DBConnectionTest extends PHPUnit_Framework_TestCase {
     public function testDBConnection(){

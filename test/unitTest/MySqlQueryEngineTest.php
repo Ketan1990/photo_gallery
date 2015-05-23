@@ -8,9 +8,9 @@
 use Interactor\MySqlQueryEngine;
 use utility\ParseArray;
 
-include_once("../models/entity/User.php");
-include_once("../models/utility/ParseArray.php");
-include_once "../models/Interactor/db/MySqlQueryEngine.php";
+include_once("../../models/entity/User.php");
+include_once("../../models/utility/ParseArray.php");
+include_once "../../models/Interactor/db/MySqlQueryEngine.php";
 class MySqlQueryEngineTest extends PHPUnit_Framework_TestCase {
     private $mysqlEngine;
     private $user;

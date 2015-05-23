@@ -5,10 +5,10 @@
  * Date: 4/26/2015
  * Time: 11:28 AM
  */
-include_once "../models/Interactor/UsersDAO.php";
-include_once "../models/Interactor/PhotoGraphDAO.php";
+include_once "../../models/Interactor/UsersDAO.php";
+include_once "../../models/Interactor/PhotoGraphDAO.php";
 
-include_once "../models/Interactor/db/InMomoryDatabase.php";
+include_once "../../models/Interactor/db/InMomoryDatabase.php";
 
 use Interactor\db\InMomoryDatabase;
 use Interactor\UsersDAO;
@@ -21,8 +21,7 @@ class UsersDAOTest extends PHPUnit_Framework_TestCase {
         //given
         $users=new \Interactor\UsersDAO(new InMomoryDatabase());
         //when
-        $userlist=$users::getAll();
-      //  print_r($userlist);
+        $userlist=$users->getAll();
         //then
        $this->assertEquals(1,count($userlist));
     }
@@ -30,7 +29,7 @@ class UsersDAOTest extends PHPUnit_Framework_TestCase {
         //given
         $users=new UsersDAO(new InMomoryDatabase());
         //when
-        $userlist=$users::get_by_Id(1);
+        $userlist=$users->get_by_Id(1);
         //then
         $this->assertEquals(1,$userlist->id);
     }
