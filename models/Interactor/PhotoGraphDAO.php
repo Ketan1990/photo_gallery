@@ -12,7 +12,7 @@ include_once"D:\\wamp\\www\\photo_gallery\\config\\UploadErrors.php";
 include_once"D:\\wamp\\www\\photo_gallery\\models\\entity\\Photograph.php";
 include_once"D:\\wamp\\www\\photo_gallery\\models\\Interactor\\DAO.php";
 include_once("D:\\wamp\\www\\photo_gallery\\models\\Interactor\\db\\MySqlQueryEngine.php");
-include_once"D:/wamp/www/photo_gallery/models/Interactor/CommentsDAO.php";
+include_once "D:/wamp/www/photo_gallery/models/Interactor/CommentsDAO.php";
 
 
 use config\UploadErrors;

@@ -10,8 +10,8 @@
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
-include_once"../../Photo_gallery/models/Interactor/PhotoGraphDAO.php";
-include_once"../../photo_gallery/models/Interactor/db/MySqlQueryEngine.php";
+include_once "../../photo_gallery/models/Interactor/PhotoGraphDAO.php";
+include_once "../../photo_gallery/models/Interactor/db/MySqlQueryEngine.php";
 $photos=new \Interactor\PhotoGraphDAO(new \Interactor\MySqlQueryEngine());
 $photoList=$photos->getPhotographs();
 $a="";

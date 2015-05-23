@@ -36,7 +36,8 @@ function log_action($action, $message="") {
         $content = "{$timestamp} | {$action}: {$message}\n";
         fwrite($handle, $content);
         fclose($handle);
-        if($new) { chmod($logfile, 0755); }
+        if($new) {
+            chmod($logfile, 0755); }
     } else {
         echo "Could not open log file for writing.";
     }

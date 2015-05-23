@@ -11,7 +11,7 @@ namespace Interactor\db;
 
 use Interactor\DBGetway;
 use User;
-include_once("../../../models/entity/User.php");
+include_once("../../entity/User.php");
 include_once("../DBGetway.php");
 class InMomoryDatabase implements  DBGetway {
 
@@ -76,6 +76,11 @@ class InMomoryDatabase implements  DBGetway {
     function find_comment_by_Photo_id($objet, $table)
     {
         // TODO: Implement find_comment_by_Photo_id() method.
+    }
+
+    public function removeComment_by_PhotoId($photo_id)
+    {
+        // TODO: Implement removeComment_by_PhotoId() method.
     }
 }
 ?>

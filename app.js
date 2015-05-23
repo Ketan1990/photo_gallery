@@ -30,6 +30,7 @@ app.controller('PhotograpCtrl', function ($scope, $http) {
         .success(function (response) {
             if(angular.isArray(response.records)) {
                 $scope.Photos = response.records;
+                console.log(response);
             }
         })
         .error(function (error) {
@@ -46,8 +47,10 @@ app.controller('PhotoCommentCtrl', function ($scope, $http,$routeParams) {
             comments.shift();
             if(comments.length!=0) {
                 $scope.comments = comments;
+
             }else{
                 $scope.msg="No Comments yet";
+
             }
 
         })
@@ -94,7 +97,7 @@ app.controller('postCtrl',function($scope,$http,$location){
         });
         request.success(function (response,status) {
             if(status==204) {
-                alert("Wrong User");
+                alert("Something Went Wrong");
                 document.getElementById("body").value="";
                 document.getElementById("author").value="";
 
