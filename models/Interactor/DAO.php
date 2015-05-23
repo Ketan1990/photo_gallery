@@ -8,7 +8,7 @@
 
 namespace Interactor;
 
-//database access object
+//DAO -database access object
 use utility\ParseArray;
 include_once "D:/wamp/www/photo_gallery/models/utility/ParseArray.php";
 abstract class DAO {
