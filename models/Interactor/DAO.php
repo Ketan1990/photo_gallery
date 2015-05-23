@@ -11,12 +11,10 @@ namespace Interactor;
 //database access object
 use User;
 use utility\ParseArray;
-include_once"D:\\wamp\\www\\photo_gallery\\models\\entity\\User.php";
 include_once"D:\\wamp\\www\\photo_gallery\\models\\utility\\ParseArray.php";
-class DAO {
+abstract class DAO {
     protected  $table_name="";
     protected  $db;
-
     function __construct(DBGetway $db)
     {
         $this->db=$db;
