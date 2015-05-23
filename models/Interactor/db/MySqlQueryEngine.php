@@ -102,6 +102,14 @@ class MySqlQueryEngine implements DBGetway
 
     }
 
+    public function removeComment_by_PhotoId($photo_id)
+    {
+        $sql = "DELETE FROM comments";
+        $sql .= " WHERE photograph_id=".$photo_id;
+        $this->query($sql);
+        return ($this->affected_rows($this->db) >= 1) ? true : false;
+    }
+
     function update($attributes, $table_name)
     {
         $attribute_pairs = array();
@@ -130,7 +138,6 @@ class MySqlQueryEngine implements DBGetway
             return $result_set == false ? false : $user;
         }
     }
-
     private function query($sql)
     {
         $this->last_query = $sql;
@@ -138,6 +145,7 @@ class MySqlQueryEngine implements DBGetway
         $this->confirm_query($result);
         return $result;
     }
+
     // "mysql-database-specific" methods
 
     public function fetch_array($result_set)
@@ -149,7 +157,6 @@ class MySqlQueryEngine implements DBGetway
     {
         return mysqli_fetch_object($result_set);
     }
-
     public function affected_rows($Dbconnecction)
     {
         return mysqli_affected_rows($Dbconnecction);
@@ -159,6 +166,7 @@ class MySqlQueryEngine implements DBGetway
         // get the last id inserted over the current db connection
         return mysqli_insert_id(DBConnection::getInstance()->getConnection());
     }
+
     public  function deleteall($tablename){
         $this->query("TRUNCATE TABLE ".$tablename);
     }
@@ -171,5 +179,6 @@ class MySqlQueryEngine implements DBGetway
         }
     }
 }
+
 ?>
 
