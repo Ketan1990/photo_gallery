@@ -7,6 +7,8 @@
  */
 use Interactor\PhotoGraphDAO;
 include_once"../models/Interactor/PhotoGraphDAO.php";
+include_once"../models/Interactor/CommentsDAO.php";
+
 include_once"../models/Interactor/db/MySqlQueryEngine.php";
 include_once "../models/utility/CommanFunction.php";
 /*if (!$session->is_logged_in()) {     redirect_to("http://localhost/photo_gallery/AdminIdex.html");
@@ -18,6 +20,7 @@ $request = json_decode($postData);
 echo($request->photo_id);
 
 $photoDAO=new PhotoGraphDAO(new \Interactor\MySqlQueryEngine());
+$commentDAO=new \Interactor\CommentsDAO(new \Interactor\MySqlQueryEngine());
 $photoDetails = $photoDAO->get_by_Id($request->photo_id);
 
 $photo=new Photograph();
@@ -29,6 +32,7 @@ $photo->size=$photoDetails[0]->size;
 $photo->type=$photoDetails[0]->type;
 
 if($photoDAO->destroy($photo)) {
+    $commentDAO->remove_comments($photoDetails[0]->id);
     header("HTTP/1.0 200 ok");
 }
     else {
