@@ -7,7 +7,7 @@
  */
 namespace Interactor;
 class DBConnection {
-    private $_connection;
+    private $connection;
     private static $_instance;
     //The single instance
     /*
@@ -26,12 +26,12 @@ class DBConnection {
     // Constructor
     private function __construct() {
 
-        include_once("D:\\wamp\\www\\photo_gallery\\config\\DBConfig.php");
-        $this->_connection = new \mysqli(\DBConfig::DB_SERVER,\DBConfig::DB_USER,\DBConfig::DB_PASS,\DBConfig::DB_NAME);
+        include_once("../../../config/DBConfig.php");
+        $this->connection = new \mysqli(\DBConfig::DB_SERVER,\DBConfig::DB_USER,\DBConfig::DB_PASS,\DBConfig::DB_NAME);
 
         // Error handling
         if(mysqli_connect_error()) {
-            trigger_error("Failed to conencto to MySQL: " . mysqli_connect_error(),
+            trigger_error("Failed to conencto to MySQLServer: " . mysqli_connect_error(),
                 E_USER_ERROR);
         }
     }
@@ -41,9 +41,9 @@ class DBConnection {
 
     // Get mysqli connection
     public function getConnection() {
-        return $this->_connection;
+        return $this->connection;
     }
     public function close_Connection() {
-        return $this->_connection->close();
+        return $this->connection->close();
     }
 }
