@@ -6,6 +6,9 @@
  * Time: 11:47 AM
  */
 namespace Interactor;
+use DBConfig;
+include_once "../../../config/DBConfig.php";
+
 class DBConnection {
     private $connection;
     private static $_instance;
@@ -26,8 +29,7 @@ class DBConnection {
     // Constructor
     private function __construct() {
 
-        include_once("../../../config/DBConfig.php");
-        $this->connection = new \mysqli(\DBConfig::DB_SERVER,\DBConfig::DB_USER,\DBConfig::DB_PASS,\DBConfig::DB_NAME);
+        $this->connection = new \mysqli(DBConfig::DB_SERVER,DBConfig::DB_USER,DBConfig::DB_PASS,DBConfig::DB_NAME);
 
         // Error handling
         if(mysqli_connect_error()) {
