@@ -7,7 +7,7 @@
  */
 namespace Interactor;
 use DBConfig;
-include_once "../../../config/DBConfig.php";
+include_once "D:/wamp/www/photo_gallery/config/DBConfig.php";
 
 class DBConnection {
     private $connection;
