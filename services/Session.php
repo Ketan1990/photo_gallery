@@ -61,7 +61,6 @@ class Session {
     private function check_message() {
         // Is there a message stored in the session?
         if(isset($_SESSION['message'])) {
-            // Add it as an attribute and erase the stored version
             $this->message = $_SESSION['message'];
             unset($_SESSION['message']);
         } else {
