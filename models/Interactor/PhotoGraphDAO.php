@@ -29,6 +29,7 @@ class PhotoGraphDAO extends DAO {
     public  function destroy($photograph) {
         // First remove the database entry
         if(self::remove($photograph)) {
+
             // then remove the file
             // Note that even though the database entry is gone, this object
             // is still around (which lets us use $this->image_path()).
@@ -66,8 +67,6 @@ class PhotoGraphDAO extends DAO {
             $photograp->setType($std->type);
             $photograp->setCaption($std->caption);
             $photograpList[$index]=$photograp;
-
-
         }
             return $photograpList;
     }
@@ -77,20 +76,6 @@ class PhotoGraphDAO extends DAO {
     }
 
 }
-/*
-$comment=new PhotoGraphDAO(new MySqlQueryEngine());
-$s=new Photograph();
-$s->id=4;
-echo(count(PhotoGraphDAO::getComments($s)));*/
-/*
-$p=new PhotoGraphDAO(new MySqlQueryEngine());
-//when
-$photograp=new Photograph();
-$photograp->set("a");
-$photograp->setPath("a");
-$photograp->setSize(231);
-$photograp->setType("cd");
-$photograp->setCaption("cptio");
-$p->save($photograp);*/
+
 
 ?>
