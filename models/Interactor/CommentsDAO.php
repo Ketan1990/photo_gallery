@@ -18,6 +18,11 @@ class CommentsDAO extends DAO{
        $result=$this->db->find_comment_by_Photo_id($photoId,$this->table_name);
         return $result;
     }
+    public function remove_comments($photoId){
+        $result=$this->db->removeComment_by_PhotoId($photoId);
+        return $result;
+
+    }
 }
 /*include_once("../Interactor/db/MySqlQueryEngine.php");
 $CommentsDAO=new CommentsDAO(new MySqlQueryEngine());
